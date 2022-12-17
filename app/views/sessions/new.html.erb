@@ -1,0 +1,14 @@
+<h1>Sign in</h1>
+
+<%= form_tag("/sessions/create", :method => "get") do %>
+<%= label_tag("Почта:") %> <br>
+<%= text_field_tag(:email) %> <br/>
+<%= label_tag("Пароль:") %> <br>
+<%= text_field_tag(:password) %> <br/>
+<br/>
+<%= submit_tag("Sign in") %>
+<% end %>
+<%= link_to "New user", users_new_path %>
+<% if params[:message] %>
+<p><%= params[:message] %></p>
+<% end %>

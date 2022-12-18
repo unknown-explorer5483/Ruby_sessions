@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# class for calculation of result
 class CalcController < ApplicationController
   def input; end
 

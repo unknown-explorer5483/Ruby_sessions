@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'sessions/exit'
   get 'sessions/create'
-  root 'sessions#new'
+  root 'sessions#index'
   get 'calc/input'
   get 'calc/view'
   get 'users/index'

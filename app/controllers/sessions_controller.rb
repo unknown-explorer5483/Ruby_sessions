@@ -1,15 +1,16 @@
-class SessionsController < ApplicationController
-  def new
-  end
+# frozen_string_literal: true
 
-  def create 
-    user = User.authenticate(params[:email],params[:password])
+# class for creating and managing sessions
+class SessionsController < ApplicationController
+  def new; end
+
+  def create
+    user = User.authenticate(params[:email], params[:password])
     if user.nil?
-    
-      redirect_to "/sessions/new?message=Incorrect+login+or+password"
+
+      redirect_to '/sessions/new?message=Incorrect+login+or+password'
     else
       sign_in user
-      current_user=(user)
       redirect_to :calc_input
     end
   end
@@ -29,7 +30,5 @@ class SessionsController < ApplicationController
     self.current_user = nil
   end
 
-  def current_user=(user)
-    @current_user = user
-  end
+  attr_writer :current_user
 end
